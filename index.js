@@ -8,7 +8,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.S3_USER}:${process.env.SECRET_KEY}@cluster0.lp833.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://genius-car-project:DLD5jmuhw5tjNO5K@cluster0.lp833.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -18,8 +18,8 @@ async function run() {
   try {
     await client.connect();
     const userCollection = client
-      .db("genius-car-service")
-      .collection("services");
+      .db("a1-steel")
+      .collection("usersData");
 
     app.get("/users", async (req, res) => {
       const query = {};
